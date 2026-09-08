@@ -1,0 +1,9 @@
+Todo List
+
+1. Assume you will have username and password in the req.body which will be a JSON
+2. Server receives the JSON and parses it using built in middleware
+3. Validation middleware creation
+   i)matching of password and username from MongoDB using find static Method of model Constructor
+   ii)If matched then return res.body successful string and redirect to landing page
+        For that create a middleware route chain - Multi route middleware
+   iii) if doesnt res.body sends a string "Invalid usernamea/password"

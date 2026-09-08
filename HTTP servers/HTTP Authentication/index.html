@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            min-height: 100vh;
+            background: url("../../../PS 5/image.png") no-repeat center;
+            background-size: cover;
+            overflow: clip;
+        }
+        .container {
+            width:40vw;
+            height:40vh;
+            border: 2px solid rgba(255,255,255,0.3);
+            margin-left:auto;
+            margin-right:auto;
+            margin-top:30vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 1rem;
+            align-items: center;
+            backdrop-filter: blur(15px);
+            border-radius: 1rem;
+        }
+        h2 {
+            font-size: 30px;
+            color: white;
+        }
+        .form {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 1rem;
+        }
+        .form div input:focus {
+            border:2px solid rgb(86, 162, 185);
+            outline: none;
+        }
+        input:first-child{
+            width:25vw;
+            height:3vh;
+            font-size: 15px;
+            text-align: start;
+            border: 2px solid white;
+            padding:1rem;
+            border-radius: 8px;
+        }
+        .submit>button {
+            width:100px;
+            height:30px;
+            font-size: 16px;
+            border-radius: 14px;
+            outline:none;
+            border: none;
+            font-weight: bold;
+        }
+        .submit>button:active{
+            transform: scale(0.95);
+            border-color: rgb(115, 165, 188);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 align="center">Sign in</h2>
+        <form class="form"action="/submit" method="POST">
+            <div class="user">
+            <input type="text"  name="username" id="username" placeholder="Enter your Username">
+            </div>
+            <div class="pass">
+            <input type="password" name="password" id="password" placeholder="Enter your Password">
+            </div>
+            <div class="submit">
+                <button type="submit">Sign in</button>
+            </div>
+                <p id="message"></p>
+        </form>
+        <script src="script.js"></script>
+    </div>
+</body>
+
+</html>

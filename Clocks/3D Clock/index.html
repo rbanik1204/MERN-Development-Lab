@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            font-size: 2.3rem;
+            margin: 0;
+            padding: 0;
+            color:white
+        }
+
+        body {
+            width:100vw;
+            height:100vh;
+            background: url('../PS 5/image.png') no-repeat center;
+            background-size: cover;
+        }
+
+        .flip-card {
+            position: relative;
+            display: inline-flex;
+            flex-direction: column;
+            border-radius: 0.1em;
+            box-shadow: 0 3px 2px 5px rgba(255, 255, 255, 0.2);
+        }
+
+        .top,
+        .bottom,
+        .flip-card.flip::after,
+        .flip-card.flip::before {
+            height: 0.75em;
+            line-height: 1;
+            padding: 0.25em;
+            overflow: hidden;
+        }
+
+        .top,
+        .flip-card.flip::before {
+            background-color: transparent;
+            border-top-left-radius: .1em;
+            border-top-right-radius: .1em;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .bottom,
+        .flip-card.flip::after {
+            background-color: transparent;
+            display: flex;
+            align-items: flex-end;
+            border-bottom-left-radius: 0.1em;
+            border-bottom-right-radius: .1em;
+        }
+
+        .flip-card.flip::before {
+            content: "5";
+            position: absolute;
+            width: 100%;
+            animation: flip-top ease-in 400ms infinite;
+            transform-origin: bottom;
+            /* background-color: red; */
+        }
+
+        @keyframes flip-top {
+            100% {
+                transform: rotateX(90deg);
+            }
+        }
+
+        .flip-card.flip::after {
+            position: absolute;
+            bottom: 0;
+            padding-bottom: 0.25em;
+            content: "5";
+            width: 100%;
+            animation: flip-bottom ease-in 1000ms infinite;
+            transform-origin: top;
+            transform: rotateX(90deg);
+        }
+
+        @keyframes flip-bottom {
+            100% {
+                transform: rotateX(0deg);
+            }
+        }
+        .container{
+            width:min(1000px,100%);
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container-child {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:80%;
+            backdrop-filter:blur(15px);
+            height:40%;
+            gap:1.2rem;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-child">
+            <div class="hours">
+                <div class="flip-card hours-tens-hand">
+                    <div class="top">2</div>
+                    <div class="bottom">2</div>
+                </div>
+                <div class="flip-card hours-units-hand">
+                    <div class="top">4</div>
+                    <div class="bottom">4</div>
+                </div>
+            </div>
+            <div class="minutes">
+                <div class="flip-card minutes-tens-hand">
+                    <div class="top">0</div>
+                    <div class="bottom">0</div>
+                </div>
+                <div class="flip-card minutes-units-hand">
+                    <div class="top">0</div>
+                    <div class="bottom">0</div>
+                </div>
+            </div>
+            <div class="seconds">
+                <div class="flip-card seconds-tens-hand">
+                    <div class="top">0</div>
+                    <div class="bottom">0</div>
+                </div>
+                <div class="flip-card seconds-units-hand ">
+                    <div class="top">0</div>
+                    <div class="bottom">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>URL Shortener</h1>
+    <div class="main">
+        <form action="/url" method="post">
+            <p>
+                URL Generated: 
+            </p>
+
+            <label for="url">Enter your Original URL</label>
+            <input type="text" name="redirectURL" id="url">
+            <input type="submit" value="Generate">
+        </form>
+    </div>
+    <script>
+        const form = document.querySelectorAll("form")[0]
+        const para = document.getElementsByTagName('p')[0]
+        let res = null;
+        async function formSubmission(){
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData(form);
+            const redirectURL = formData.get('redirectURL')
+            const response = await fetch('/url', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ redirectURL }) //live js obj
+            })
+            // const res = await response.json() // this will bring severe crash SyntaxError
+            res = await response.json()
+            // console.log(res.id,res.message) // will give undefined undefined
+            // console.log(res)
+            
+            const anchor = document.createElement('a');
+            anchor.setAttribute("href", `http://[::1]:3000/api/url/${res.id}`)
+            anchor.innerText = `click me!`
+            para.firstChild.after(anchor)
+            tableCreation()
+        });
+        }
+        async function tableCreation(){
+            const urls = res.allUrls;
+            console.log(urls)
+            const table = document.createElement("table");
+            const tHead = table.createTHead();
+            let row = tHead.insertRow();
+            let cell1 = row.insertCell()
+            let cell2 = row.insertCell()
+            let cell3 = row.insertCell()
+            cell1.textContent = 'ShortID'
+            cell2.textContent = 'RedirectURL'
+            cell3.textContent = 'Clicks'
+            const tBody = table.createTBody();
+            urls.forEach((url, index) => {
+                let tRow = tBody.insertRow()
+                cell1 = tRow.insertCell()
+                cell2 = tRow.insertCell()
+                cell3 = tRow.insertCell()
+                cell1.innerHTML = `${url.shortId}`
+                cell2.innerHTML = `${url.redirectUrl}`
+                cell3.innerHTML = `${url.visitHistory.length+1}`
+            });
+            console.log(table)
+            if(res.allUrls)
+                document.getElementsByClassName("main")[0].append(table);
+        }
+        formSubmission()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: auto;
+            min-height: 100vh;
+            background: url('../PS 5/image.png') no-repeat 50% 80%;
+            background-size: cover;
+            overflow: clip;
+        }
+
+        .container {
+            width: min(60vw, 100%);
+            height: clamp(30vh, 300px, 50vh);
+            /* background-color: aqua; */
+            margin: 30vh auto;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 600;
+            border-color: white;
+            color: aliceblue;
+            font-size: 7rem;
+            backdrop-filter: blur(17px);
+            border-radius: 10px;
+            border-width: 16px;
+            display: grid;
+            place-items: center;
+            grid-template-columns: [Hours]1fr [Minutes]1fr [Seconds]1fr;
+            grid-template-areas: "hours minutes seconds";
+            grid-template-rows: 100%;
+            /* transition: transform 0.5s ease; */
+        }
+
+        :is(.hours, .minutes) {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            grid-template-columns:80% 20%;
+        }
+
+        .hours {
+            grid-area: hours;
+        }
+
+        .minutes {
+            grid-area: minutes;
+        }
+        span:last-child:not(.seconds>span) {
+            /* display:none; */
+            position:relative;
+            top:-0.7rem;
+        }
+        .seconds {
+            grid-area: seconds;
+            /* background-color: blue; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="hours">
+            
+        </div>
+        <div class="minutes">
+            
+        </div>
+        <div class="seconds">
+
+        </div>
+    </div>
+    <script>
+        let div = document.body.firstElementChild;
+        function time() {
+            let date = new Date();
+            let hours = date.getHours()
+            let minutes = date.getMinutes()
+            let seconds = date.getSeconds()
+            div.firstElementChild.innerHTML = `<span>${hours}</span><span>:</span>`
+            div.children[1].innerHTML = `<span>${minutes}</span><span>:</span>`
+            div.lastElementChild.innerHTML = `<span>${seconds}</span>`
+        }
+        setInterval(time, 1000);
+        // console.log(date.getHours(),date.getMinutes(),date.getSeconds(),date.getMilliseconds())
+    </script>
+</body>
+
+</html>

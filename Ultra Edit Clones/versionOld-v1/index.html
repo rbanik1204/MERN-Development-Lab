@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UltraEdit</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap');
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* font-family: "Baloo Bhaijaan 2", sans-serif; */
+        }
+
+        body {
+            background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+        }
+
+        .navbar {
+            width: 100%;
+            height: 15vh;
+            display: flex;
+
+        }
+
+        .left-section {
+            width: 72vw;
+            height: 15vh;
+            background-color: whitesmoke;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right-section {
+            width: 33vw;
+            height: 15vh;
+            background-color: whitesmoke;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+
+        .logo {
+            position: relative;
+            left: 120px;
+            width: 5vw;
+            height: 5vw;
+            border-radius: 100%;
+            display: flex;
+            /* transform:translateX(100px); */
+        }
+
+        .branding {
+            position: relative;
+            top: 2.0vh;
+            gap: 6px;
+            left: 130px;
+            display: flex;
+            flex-direction: column;
+            width: 18vw;
+            font-family: "Baloo Bhaijaan 2", sans-serif
+        }
+
+        .heading {
+            font-size: 35px;
+        }
+
+        .branding .sub-heading {
+            position: relative;
+            padding-left: 38px;
+            width: 150px;
+            top: -3vh;
+        }
+
+        .nav-list-1 {
+            position: relative;
+            left: 20px;
+            width: 50vw;
+            list-style-type: none;
+            list-style-position: inside;
+            display: flex;
+            justify-content: center;
+            /* border: 2px solid black; */
+        }
+
+        .nav-list-1 .list1 {
+            margin: 1vw;
+            padding: 1.2vw;
+            display:flex;
+            align-items: center;
+            font-size: 1.1em;
+            font-family: "Baloo Bhaijaan 2", sans-serif;
+            cursor: pointer;
+        }
+
+        .nav-list-2>.item1-list2 {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        .nav-list-2 .list2 {
+            margin: 1vw;
+            padding: 1.2vw;
+            display:flex;
+            align-items: center;
+            font-size: 1.1em;
+            font-family: "Baloo Bhaijaan 2", sans-serif;
+            transform: translateX(-80px);
+            cursor: pointer;
+        }
+
+        .nav-list-2 {
+            width: 40vw;
+            list-style-type: none;
+            list-style-position: inside;
+            display: flex;
+            justify-content: end;
+
+        }
+
+        .ri-search-2-line {
+            margin-left: -10px;
+            /* Adjust this value as needed */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="left-section">
+            <img src="/logo.png" alt="Not available" class="logo">
+            <div class="branding">
+                <h2 class="heading">UltraEdit</h2>
+                <div class="sub-heading">by embarcadero</div>
+            </div>
+            <ul class="nav-list-1">
+                <li class="item1-list1 list1"><span>Products</span><svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                        <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></li>
+                <li class="item2-list1 list1"><span>Pricing</span><svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                        <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></li>
+                <li class="item3-list1 list1"><span>Resources</span><svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                        <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></li>
+                <li class="item4-list1 list1"><span>Our company</span><svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                        <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></li>
+            </ul>
+        </div>
+
+        <div class="right-section">
+            <ul class="nav-list-2">
+                <li class="item1-list2 list2">Buy Now</li>
+                <li class="item2-list2 list2"><i class="ri-global-line"></i>English</li>
+                <li class="item3-list2 list2"><i class="ri-search-2-line"></i></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

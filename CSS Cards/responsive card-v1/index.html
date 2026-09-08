@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT 2</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap');
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Baloo Bhaijaan 2", sans-serif;
+        }
+
+        body {
+            position:relative;
+            background: linear-gradient(120deg, #f0f2f0, #397b94);
+            height: 200vh;
+            
+            z-index:1;
+        }
+        header{
+            position:sticky;
+            top:0;
+            z-index: 2;
+        }
+        .navbar {
+            position: relative;
+            border: 2px solid rgb(66, 139, 168);
+            height: 40px;
+            width: 100%;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            justify-content: end;
+            gap: 20px;
+            transform: translateX(-20px);
+        }
+
+        li {
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(43, 86, 166, 0.5);
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer
+        }
+
+        .navbar:hover {
+            box-shadow:
+                0 0 15px #174c50,
+                0 0 25px #3da9ad,
+                0 0 35px #269ea2;
+            transition: box-shadow 0.5s ease-in-out;
+        }
+        .content{
+            position:relative;
+            top:20px;
+            display:flex;
+            flex-direction: row;;
+            justify-content: center;
+            gap:10px;
+            z-index:1;
+        }
+        .content div:first-child {
+            position: relative;
+            top: 5px;
+            left: 5px;
+            width: 40vw;
+            height: 40vh;
+            background: linear-gradient(to right, #518798, #357e95);
+            border: 2px solid #2c5d6b;
+            border-radius: 10px;
+        }
+
+        .content div:not(:first-child) {
+            position: relative;
+            top: 5px;
+            left: 5px;
+            width: 40vw;
+            height: 40vh;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            border: 2px solid #2c5d6b;
+            border-radius: 10px;
+        }
+
+        .container{
+            margin:100px 0px 0px 0px;
+            width: 85vw;
+            height:150px;
+            border:2px solid #2c5d6b;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            border-radius: 20px;
+            transform: translateX(8%);
+        }
+        .main{
+            flex: 1;
+        }
+        .foot{
+            position: fixed;
+            bottom:0;
+            border: 2px solid rgb(66, 139, 168);
+            height: 40px;
+            width: 100%;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+        }
+        img.logo{
+            position: fixed;
+            bottom:0;
+            right:0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index:2;
+        }
+        .foot p {
+            text-align: center;
+            padding-top: 5px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+   <header class="header">
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    </header> 
+    
+    <main class="main">
+        <article class="content">
+            <div class="item"></div>
+            <div class="item"></div>
+        </article>
+    </main>
+        <div class="container">Welcome to my website</div>
+        <img src="\download.jpg" alt="" class="logo">
+        <footer class="foot">
+            <p>© 2023 PROJECT 2. All rights reserved.</p>
+        </footer>
+</body>
+
+</html>

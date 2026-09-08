@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background-color: antiquewhite;
+        }
+
+        .box {
+            height: 64vh;
+            width: 20vw;
+            border: 2px solid rgb(133, 133, 195);
+            margin: 100px auto;
+            border-radius: 15px;
+            background-color: rgb(250, 250, 250);
+            box-shadow: 5px 5px 15px 5px #888888;
+        }
+
+        figure {
+            height: 42%;
+            width: 97%;
+            margin: 5px auto;
+            border-color: inherit;
+            border-radius: 15px;
+            box-shadow: 2px 2px 5px 5px #777777;
+        }
+
+        div figure img {
+            height: 100%;
+            width: 100%;
+            border-radius: 15px;
+        }
+        .child {
+            width: 95%;
+            height: 55%;
+            /* background-color: rgb(82, 201, 144); */
+            /* border: 2px solid red; */
+            border-radius: 15px;
+            overflow-y: scroll;
+            margin: auto;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        .child button {
+            background-color: rgb(235, 233, 229);
+            width: 68px;
+            height: 30px;
+            font-size: 14px;
+            border-radius: 15px;
+            border: 2px solid transparent;
+            margin-top: 5px;
+            font-weight: 600;
+            color: rgb(119, 198, 197)
+        }
+
+        .child>button:nth-child(1) {
+            margin-left: 10px;
+            margin-right: 15px;
+        }
+
+        button:active {
+            background-color: antiquewhite;
+            transform: scale(0.98);
+        }
+
+        .child p {
+            font-size: 19px;
+            line-height: 1.5;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .child p+button {
+            width: 100px;
+            height: 30px;
+            display: block;
+            color: rgb(139, 234, 232);
+            border: 2px solid transparent;
+            margin: 12px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <figure>
+            <img src="image.png" alt="not found">
+        </figure>
+        <div class="child">
+            <button>Nature</button>
+            <button>Lake</button>
+            <h1>Lorem, ipsum.</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit inventore nisi quos, qui facilis
+                omnis repudiandae, alias, enim error iste eius nesciunt ut utisf fi sfi!
+            </p>
+            <button>Read more</button>
+        </div>
+    </div>
+</body>
+
+</html>

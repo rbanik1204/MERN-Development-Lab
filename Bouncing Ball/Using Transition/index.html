@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ball Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 5px;
+            position: relative;
+            width: 63vw;
+            height: 60vh;
+            background-color: red;
+        }
+
+        .box {
+            margin: 0px 0px 0 5px;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 40px;
+            height: 40px;
+            background-color: blue;
+            border: 2px solid blue;
+            border-radius: 100%;
+            animation: bounce 5s ease-in-out 1s infinite;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0px) translateX(0px);
+                
+            }
+
+            20% {
+                transform:translateY(-20vh) translateX(15vw);
+            }
+            40% {
+                /* transform-origin: 0vw 30vh; */
+                transform:translateY(0vh) translateX(30vw);
+                
+            }
+            60%{
+                /* transform-origin: 220px 0px; */
+                transform:translateY(-20vh) translateX(45vw);
+            }
+            80%{
+                /* transform-origin: 500px 0px; */
+                transform:translateY(0vh) translateX(60vw);
+            }
+            100%{
+                transform:translateY(0vh) translateX(0vw);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box translate"></div>
+    </div>
+</body>
+
+</html>
