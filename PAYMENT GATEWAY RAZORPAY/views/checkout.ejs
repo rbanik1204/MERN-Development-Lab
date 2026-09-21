@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Payment Portal Opening...</h2>
+        <p>please do not close or refresh</p>
+    </div>
+    <% if (locals.success && locals.order_id) { %>
+        <script>
+            // Automatically launch Razorpay window using injected template variables
+            const options = {
+                key: "<%= locals.key_id %>",
+                amount: "<%= locals.amount %>",
+                currency: "<%= locals.currency %>",
+
+                name: "Test Store Name",
+                description: "Test Transaction",
+
+                order_id: "<%= locals.order_id %>",
+
+                handler: async function (response) {
+                    console.log("Payment response:", response);
+                    const verifyResponse = await fetch("/api/payments/verify-payment", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            razorpay_order_id: response.razorpay_order_id,
+                            razorpay_payment_id: response.razorpay_payment_id,
+                            razorpay_signature: response.razorpay_signature
+                        })
+                    });
+                    const res = await verifyResponse.json()
+                    console.log(res)
+                    if(verifyResponse.ok && res.success){
+                            window.location.href = '/api/payments/success'
+                        }
+                        else window.location.href = '/api/payments/failure'
+                }
+            }
+            const rzp = new Razorpay(options);
+            // Auto-open modal straight away on page load
+            rzp.open();//HTTPS payload parameters(JSON)
+        </script>
+        <% } else { %>
+            <h3>Unable to initialize payment.</h3>
+            <% } %>
+</body>
+
+</html>
